@@ -1,8 +1,7 @@
-import Pawn from './Pawn.js';
-
+import Pawn from "./Pawn.js";
 export default class Tiger extends Pawn {
-  constructor(x, y, img) {
-    super(x, y, './img/tiger.jpg');
+  constructor(x, y) {
+    super(x, y, "./img/tiger.png");
   }
   place()
   {

@@ -1,21 +1,31 @@
-import Pawn from './Pawn.js';
+import Pawn from "./Pawn.js";
+
 export default class Goat extends Pawn {
-  constructor(x, y, img) {
-    super(x, y, img);
+  constructor(x, y) {
+    super(x, y, "./img/goat.png");
   }
 
-  goatplace(x, y)
+  Place() {
+    const imgHeight = 60;
+    const goatImg = document.createElement("img");
+    goatImg.src = this.img;
+    goatImg.style.position = "absolute";
+    goatImg.style.height = imgHeight + "px";
+    goatImg.style.left = this.x - imgHeight / 2 + "px";
+    goatImg.style.top = this.y - imgHeight / 2 + "px";
+    document.querySelector(".goat-container").appendChild(goatImg);
+  }
+
+  OnHover()
   {
     const imgHeight = 60;
-    const imgwidth = 30;
-    const tigerimg = document.createElement('img');
-    tigerimg.src = this.img;
-    document.getElementById('tiger-container').appendChild(tigerimg);
-    tigerimg.style.position = "absolute";
-    tigerimg.style.width = imgwidth + "px";
-    tigerimg.style.height = imgHeight + "px";
-    tigerimg.style.left = this.x - imgwidth / 2 + "px";
-    tigerimg.style.top = this.y - imgHeight / 2 + "px";
-    
+    const goatImg = document.createElement("img");
+    goatImg.src = this.img;
+    goatImg.style.opacity = "0.5";
+    goatImg.style.position = "absolute";
+    goatImg.style.height = imgHeight + "px";
+    goatImg.style.left = this.x - imgHeight / 2 + "px";
+    goatImg.style.top = this.y - imgHeight / 2 + "px";
+    document.querySelector(".goat-container").appendChild(goatImg);
   }
 }
